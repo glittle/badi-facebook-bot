@@ -1,32 +1,32 @@
-require('dotenv').config();
+require('dotenv').config({
+    path: '../.env'
+});
 
 const fs = require('fs');
-const glob = require('glob');
 const extend = require('node.extend');
 const Bot = require('messenger-bot');
-const storage = require('node-persist');
 const moment = require('moment-timezone');
-const badiCalc = require('./badi/badiCalc');
-const sunCalc = require('./badi/sunCalc');
+const badiCalc = require('./Badi/badiCalc');
+const sunCalc = require('./Badi/sunCalc');
 const os = require('os');
-const MongoClient = require('mongodb').MongoClient;
-const MongoLogger = require('mongodb').Logger;
+// const glob = require('glob');
+// const storage = require('node-persist');
+// const MongoClient = require('mongodb').MongoClient;
+// const MongoLogger = require('mongodb').Logger;
 
 //const forceNewMessageChar = '$%';
 const maxAnswerLength = 319;
 const sorryMsg = 'Oops... I had a problem just now. Sorry I wasn\'t able to reply properly. ' +
     'My programmer will have to fix something!';
 
-// const storageFolder = 'BadiBotStorage';
-//const storagePath = './' + storageFolder;
-const storagePath = 'C:/dev/badi-messenger-bot-storage';
+// const storagePath = 'C:/dev/badi-messenger-bot-storage';
 
 var manuallyStopped = false; // remote kill switch!
 var reminderInterval = null;
 
-storage.initSync({
-    dir: storagePath
-});
+// storage.initSync({
+//     dir: storagePath
+// });
 
 //console.log(storage.keys());
 //console.log(storage.values());
@@ -38,7 +38,7 @@ let bot = new Bot({
     token: process.env.botKey,
     verify: 'MyBadiBot'
 });
-var mongo = {};
+// var mongo = {};
 
 function getItem(id, cb) {
     console.log('get', id);
@@ -965,7 +965,7 @@ function addVerse(profile, answers) {
 }
 
 function loadVersesAsync(cb) {
-    fs.readFile('./badi/verses.json', 'utf8', (err, data) => {
+    fs.readFile('./../badi/verses.json', 'utf8', (err, data) => {
         if (err) {
             console.log('Verses failed to load...');
             console.log(err);
@@ -1076,6 +1076,11 @@ MongoClient.connect(process.env.mongo, function (err, db) {
 
 //console.log(getItem('reminders'));
 
+function handleRequest(req, res){
+
+}
+
 module.exports = {
-    bot: bot
+    bot: bot,
+    handleRequest: handleRequest
 }

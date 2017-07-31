@@ -1,0 +1,20 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "glob": "^7.0.5",
+    "node.extend": "^1.1.5",
+    "messenger-bot": "^2.3.0",
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.4",
+    "mongodb": "^2.2.12",
+    "node-persist": "0.0.11",
+    "request": "^2.72.0",
+    "timezonedb-node": "^1.0.7",
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5.7",
+    "body-parser": "^1.15.0"
+  },
+  "private": true
+}

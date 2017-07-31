@@ -1,5 +1,9 @@
-# Badi Messenger Bot
+# badi-facebook-bot
 
-Started as a Facebook Messenger bot for the Badi Calendar!
+(Not working yet!)
 
-The Bot is now running in the "back end" of a website. The website can now evolve and add other pages."# badi-facebook-bot" 
+A Facebook Messenger bot for the Badi Calendar - see https://www.facebook.com/BadiCalendarBot/!
+
+Evolved from https://github.com/glittle/badi-messenger-bot. 
+
+Now using Firebase for storage and hosting.

@@ -1,0 +1,27 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "public",
+    // Add the following rewrites section *within* "hosting"
+    "rewrites": [
+      {
+        "source": "/webhook",
+        "function": "webhook"
+      },
+      {
+        "source": "/fbbot1",
+        "function": "facebook1"
+      },
+      {
+        "source": "/bigben2",
+        "function": "bigben"
+      },
+      {
+        "source": "/bigben",
+        "function": "bigben2"
+      }
+    ]
+  }
+}
